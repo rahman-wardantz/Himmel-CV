@@ -4,50 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Himmel's CV | Hero Party Leader</title>
+    <meta name="description" content="CV of Himmel, legendary hero and leader of the Hero Party. Explore his achievements, skills, and party members.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=MedievalSharp&family=Noto+Serif+JP:wght@400;700&display=swap');
-        
         body {
             font-family: 'Noto Serif JP', serif;
             background-color: #f5f0e6;
             color: #333;
         }
-        
         .medieval {
             font-family: 'MedievalSharp', cursive;
         }
-        
         .hero-bg {
             background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(230,240,255,0.9) 100%), 
                         url('https://wallpaperaccess.com/full/11201678.jpg') no-repeat center center;
             background-size: cover;
         }
-        
         .skill-bar {
             height: 8px;
             border-radius: 4px;
             background: linear-gradient(90deg, #4a6fa5 0%, #6b8cce 100%);
+            transition: width 1.2s cubic-bezier(0.4,0,0.2,1);
         }
-        
         .scroll-effect {
             transition: all 0.3s ease;
         }
-        
         .scroll-effect:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.12);
         }
-        
         .hero-icon {
             color: #4a6fa5;
             text-shadow: 0 0 5px rgba(74, 111, 165, 0.3);
         }
-        
         .section-divider {
             border-top: 2px dashed #4a6fa5;
             opacity: 0.3;
+        }
+        .party-member:hover {
+            background: #f0f6ff;
+            transform: scale(1.03);
+            transition: background 0.3s, transform 0.3s;
         }
     </style>
 </head>
@@ -57,15 +56,15 @@
         <header class="hero-bg rounded-2xl p-8 md:p-12 shadow-lg mb-8 scroll-effect">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-white shadow-lg mb-4 md:mb-0 md:mr-8">
-                    <img src="https://cdn.myanimelist.net/images/characters/9/523295.jpg" alt="Himmel Portrait" class="w-full h-full object-cover">
+                    <img src="https://cdn.myanimelist.net/images/characters/9/523295.jpg" alt="Portrait of Himmel the Hero" class="w-full h-full object-cover">
                 </div>
                 <div class="text-center md:text-left">
                     <h1 class="medieval text-3xl md:text-4xl font-bold text-blue-900 mb-2">Himmel the Hero</h1>
                     <p class="text-lg text-blue-700 mb-4">Former Leader of the Hero Party</p>
                     <div class="flex justify-center md:justify-start space-x-4">
-                        <a href="#" class="text-blue-600 hover:text-blue-800 transition"><i class="fab fa-twitter fa-lg"></i></a>
-                        <a href="#" class="text-blue-600 hover:text-blue-800 transition"><i class="fas fa-envelope fa-lg"></i></a>
-                        <a href="#" class="text-blue-600 hover:text-blue-800 transition"><i class="fas fa-scroll fa-lg"></i></a>
+                        <a href="#" aria-label="Twitter" class="text-blue-600 hover:text-blue-800 transition hover:scale-110"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" aria-label="Email" class="text-blue-600 hover:text-blue-800 transition hover:scale-110"><i class="fas fa-envelope fa-lg"></i></a>
+                        <a href="#" aria-label="Scroll" class="text-blue-600 hover:text-blue-800 transition hover:scale-110"><i class="fas fa-scroll fa-lg"></i></a>
                     </div>
                 </div>
             </div>
@@ -245,36 +244,36 @@
                         <i class="fas fa-users hero-icon mr-2"></i> Hero Party Members
                     </h2>
                     <div class="grid grid-cols-2 gap-4">
-                        <div class="flex items-center">
+                        <div class="flex items-center party-member rounded-lg p-2 transition">
                             <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-md mr-3">
-                                <img src="https://cdn.myanimelist.net/images/characters/7/525105.jpg" alt="Frieren" class="w-full h-full object-cover">
+                                <img src="https://cdn.myanimelist.net/images/characters/7/525105.jpg" alt="Frieren, Elven Mage" class="w-full h-full object-cover">
                             </div>
                             <div>
                                 <h4 class="font-bold text-blue-800">Frieren</h4>
                                 <p class="text-xs text-gray-600">Elven Mage</p>
                             </div>
                         </div>
-                        <div class="flex items-center">
+                        <div class="flex items-center party-member rounded-lg p-2 transition">
                             <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-md mr-3">
-                                <img src="https://cdn.myanimelist.net/images/characters/13/523293.jpg" alt="Eisen" class="w-full h-full object-cover">
+                                <img src="https://cdn.myanimelist.net/images/characters/13/523293.jpg" alt="Eisen, Dwarven Warrior" class="w-full h-full object-cover">
                             </div>
                             <div>
                                 <h4 class="font-bold text-blue-800">Eisen</h4>
                                 <p class="text-xs text-gray-600">Dwarven Warrior</p>
                             </div>
                         </div>
-                        <div class="flex items-center">
+                        <div class="flex items-center party-member rounded-lg p-2 transition">
                             <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-md mr-3">
-                                <img src="https://cdn.myanimelist.net/images/characters/16/523294.jpg" alt="Heiter" class="w-full h-full object-cover">
+                                <img src="https://cdn.myanimelist.net/images/characters/16/523294.jpg" alt="Heiter, Human Priest" class="w-full h-full object-cover">
                             </div>
                             <div>
                                 <h4 class="font-bold text-blue-800">Heiter</h4>
                                 <p class="text-xs text-gray-600">Human Priest</p>
                             </div>
                         </div>
-                        <div class="flex items-center">
+                        <div class="flex items-center party-member rounded-lg p-2 transition">
                             <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-md mr-3">
-                                <img src="https://cdn.myanimelist.net/images/characters/9/523295.jpg" alt="Himmel" class="w-full h-full object-cover">
+                                <img src="https://cdn.myanimelist.net/images/characters/9/523295.jpg" alt="Himmel, Human Hero" class="w-full h-full object-cover">
                             </div>
                             <div>
                                 <h4 class="font-bold text-blue-800">Himmel</h4>
@@ -297,7 +296,7 @@
         // Simple animation for scroll effects
         document.addEventListener('DOMContentLoaded', function() {
             const scrollElements = document.querySelectorAll('.scroll-effect');
-            
+            const skillBars = document.querySelectorAll('.skill-bar');
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -306,12 +305,19 @@
                     }
                 });
             }, { threshold: 0.1 });
-            
             scrollElements.forEach(el => {
                 el.style.opacity = 0;
                 el.style.transform = 'translateY(20px)';
                 el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
                 observer.observe(el);
+            });
+            // Animate skill bars
+            skillBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 400);
             });
         });
     </script>
