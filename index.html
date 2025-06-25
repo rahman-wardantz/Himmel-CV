@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Himmel's CV | Hero Party Leader</title>
     <meta name="description" content="CV of Himmel, legendary hero and leader of the Hero Party. Explore his achievements, skills, and party members.">
+    <meta name="theme-color" content="#4a6fa5">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -12,20 +13,24 @@
 <body class="bg-amber-50">
     <div class="max-w-4xl mx-auto my-8 md:my-12 px-4">
         <!-- Header Section -->
-        <header class="hero-bg rounded-2xl p-8 md:p-12 shadow-lg mb-8 scroll-effect">
+        <header class="hero-bg rounded-2xl p-8 md:p-12 shadow-lg mb-8 scroll-effect" aria-label="Profile Header">
             <div class="flex flex-col md:flex-row items-center">
                 <div class="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-white shadow-lg mb-4 md:mb-0 md:mr-8">
-                    <img src="https://cdn.myanimelist.net/images/characters/9/523295.jpg" alt="Portrait of Himmel the Hero" class="w-full h-full object-cover">
+                    <img src="https://cdn.myanimelist.net/images/characters/9/523295.jpg" alt="Portrait of Himmel the Hero" class="w-full h-full object-cover" loading="lazy">
                 </div>
                 <div class="text-center md:text-left">
-                    <h1 class="medieval text-3xl md:text-4xl font-bold text-blue-900 mb-2">Himmel the Hero</h1>
-                    <p class="text-lg text-blue-700 mb-4">Former Leader of the Hero Party</p>
-                    <div class="flex justify-center md:justify-start space-x-4">
-                        <a href="https://twitter.com/utadayasukazu" aria-label="Twitter" class="text-blue-600 hover:text-blue-800 transition hover:scale-110"><i class="fab fa-twitter fa-lg"></i></a>
-                        <a href="mailto:wardantz.01@gmail.com" aria-label="Email" class="text-blue-600 hover:text-blue-800 transition hover:scale-110"><i class="fas fa-envelope fa-lg"></i></a>
-                        <a href="#achievements" aria-label="Scroll" class="text-blue-600 hover:text-blue-800 transition hover:scale-110 scroll-link"><i class="fas fa-scroll fa-lg"></i></a>
-                        <button id="darkModeToggle" aria-label="Toggle dark mode" class="ml-2 text-yellow-600 hover:text-yellow-800 transition hover:scale-110"><i class="fas fa-moon fa-lg"></i></button>
-                        <button id="printBtn" aria-label="Print CV" class="ml-2 text-gray-600 hover:text-gray-900 transition hover:scale-110"><i class="fas fa-print fa-lg"></i></button>
+                    <h1 class="medieval text-3xl md:text-4xl font-bold accent mb-2">Himmel the Hero</h1>
+                    <p class="text-lg accent mb-4">Former Leader of the Hero Party</p>
+                    <div class="flex justify-center md:justify-start space-x-4" aria-label="Social and Utility Links">
+                        <a href="https://twitter.com/utadayasukazu" aria-label="Twitter" class="text-blue-600 hover:text-blue-800 transition hover:scale-110" title="Twitter"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="mailto:wardantz.01@gmail.com" aria-label="Email" class="text-blue-600 hover:text-blue-800 transition hover:scale-110" title="Copy Email"><i class="fas fa-envelope fa-lg"></i></a>
+                        <a href="#achievements" aria-label="Scroll" class="text-blue-600 hover:text-blue-800 transition hover:scale-110 scroll-link" title="Scroll to Achievements"><i class="fas fa-scroll fa-lg"></i></a>
+                        <button id="darkModeToggle" aria-label="Toggle dark mode" class="ml-2 text-yellow-600 hover:text-yellow-800 transition hover:scale-110" title="Toggle Dark Mode"><i class="fas fa-moon fa-lg"></i></button>
+                        <button id="printBtn" aria-label="Print CV" class="ml-2 text-gray-600 hover:text-gray-900 transition hover:scale-110" title="Print CV"><i class="fas fa-print fa-lg"></i></button>
+                        <button id="accentBlue" class="w-5 h-5 rounded-full bg-blue-500 border-2 border-white hover:scale-125 transition" title="Blue" aria-label="Accent Blue"></button>
+                        <button id="accentGreen" class="w-5 h-5 rounded-full bg-green-500 border-2 border-white hover:scale-125 transition" title="Green" aria-label="Accent Green"></button>
+                        <button id="accentPurple" class="w-5 h-5 rounded-full bg-purple-500 border-2 border-white hover:scale-125 transition" title="Purple" aria-label="Accent Purple"></button>
+                        <button id="accentRed" class="w-5 h-5 rounded-full bg-red-500 border-2 border-white hover:scale-125 transition" title="Red" aria-label="Accent Red"></button>
                     </div>
                 </div>
             </div>
@@ -207,7 +212,7 @@
                     <div class="grid grid-cols-2 gap-4">
                         <div class="flex items-center party-member rounded-lg p-2 transition">
                             <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-md mr-3">
-                                <img src="https://cdn.myanimelist.net/images/characters/7/525105.jpg" alt="Frieren, Elven Mage" class="w-full h-full object-cover">
+                                <img src="https://cdn.myanimelist.net/images/characters/7/525105.jpg" alt="Frieren, Elven Mage" class="w-full h-full object-cover" loading="lazy">
                             </div>
                             <div>
                                 <h4 class="font-bold text-blue-800">Frieren</h4>
@@ -216,7 +221,7 @@
                         </div>
                         <div class="flex items-center party-member rounded-lg p-2 transition">
                             <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-md mr-3">
-                                <img src="https://cdn.myanimelist.net/images/characters/13/523293.jpg" alt="Eisen, Dwarven Warrior" class="w-full h-full object-cover">
+                                <img src="https://cdn.myanimelist.net/images/characters/13/523293.jpg" alt="Eisen, Dwarven Warrior" class="w-full h-full object-cover" loading="lazy">
                             </div>
                             <div>
                                 <h4 class="font-bold text-blue-800">Eisen</h4>
@@ -225,7 +230,7 @@
                         </div>
                         <div class="flex items-center party-member rounded-lg p-2 transition">
                             <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-md mr-3">
-                                <img src="https://cdn.myanimelist.net/images/characters/16/523294.jpg" alt="Heiter, Human Priest" class="w-full h-full object-cover">
+                                <img src="https://cdn.myanimelist.net/images/characters/16/523294.jpg" alt="Heiter, Human Priest" class="w-full h-full object-cover" loading="lazy">
                             </div>
                             <div>
                                 <h4 class="font-bold text-blue-800">Heiter</h4>
@@ -234,7 +239,7 @@
                         </div>
                         <div class="flex items-center party-member rounded-lg p-2 transition">
                             <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-md mr-3">
-                                <img src="https://cdn.myanimelist.net/images/characters/9/523295.jpg" alt="Himmel, Human Hero" class="w-full h-full object-cover">
+                                <img src="https://cdn.myanimelist.net/images/characters/9/523295.jpg" alt="Himmel, Human Hero" class="w-full h-full object-cover" loading="lazy">
                             </div>
                             <div>
                                 <h4 class="font-bold text-blue-800">Himmel</h4>

@@ -59,15 +59,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Dark mode toggle
     const darkToggle = document.getElementById('darkModeToggle');
-    darkToggle.addEventListener('click', () => {
-        document.body.classList.toggle('dark');
-        localStorage.setItem('darkMode', document.body.classList.contains('dark'));
-    });
+    if (darkToggle) {
+        darkToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+            localStorage.setItem('darkMode', document.body.classList.contains('dark'));
+        });
+    }
     // Load dark mode from storage
     if (localStorage.getItem('darkMode') === 'true') {
         document.body.classList.add('dark');
     }
-
     // Auto dark mode by time (if user never set manually)
     if (localStorage.getItem('darkMode') === null) {
         const hour = new Date().getHours();
@@ -108,68 +109,87 @@ document.addEventListener('DOMContentLoaded', function() {
 
     partyMembers.forEach(member => {
         member.addEventListener('click', () => {
-            const name = member.querySelector('h4').innerText.trim();
+            const h4 = member.querySelector('h4');
+            if (!h4) return;
+            const name = h4.innerText.trim();
             const data = partyData[name];
-            if (data) {
+            if (data && modalContent && partyModal) {
                 modalContent.innerHTML = `
                     <div class="flex flex-col items-center">
-                        <img src="${data.img}" alt="${name}" class="w-20 h-20 rounded-full mb-3 border-2 border-blue-400 shadow">
+                        <img src="${data.img}" alt="${name}" class="w-20 h-20 rounded-full mb-3 border-2 border-blue-400 shadow" loading="lazy">
                         <h3 class="font-bold text-lg text-blue-800 dark:text-blue-200 mb-1">${name}</h3>
                         <p class="text-sm text-gray-600 dark:text-gray-300 mb-2">${data.role}</p>
                         <p class="text-gray-700 dark:text-gray-200 text-center">${data.desc}</p>
                     </div>
                 `;
                 partyModal.classList.remove('hidden');
+                modalContent.focus && modalContent.focus();
             }
         });
     });
-    closeModal.addEventListener('click', () => {
-        partyModal.classList.add('hidden');
-    });
-    partyModal.addEventListener('click', (e) => {
-        if (e.target === partyModal) partyModal.classList.add('hidden');
-    });
-    document.addEventListener('keydown', (e) => {
-        if (e.key === "Escape" && !partyModal.classList.contains('hidden')) {
+    if (closeModal && partyModal) {
+        closeModal.addEventListener('click', () => {
             partyModal.classList.add('hidden');
-        }
-    });
+        });
+        partyModal.addEventListener('click', (e) => {
+            if (e.target === partyModal) partyModal.classList.add('hidden');
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === "Escape" && !partyModal.classList.contains('hidden')) {
+                partyModal.classList.add('hidden');
+            }
+        });
+    }
 
     // Scroll to Top Button
     const scrollTopBtn = document.getElementById('scrollTopBtn');
-    window.addEventListener('scroll', () => {
+    let scrollTimeout;
+    function handleScroll() {
         if (window.scrollY > 300) {
-            scrollTopBtn.classList.remove('hidden');
+            scrollTopBtn && scrollTopBtn.classList.remove('hidden');
         } else {
-            scrollTopBtn.classList.add('hidden');
+            scrollTopBtn && scrollTopBtn.classList.add('hidden');
         }
-    });
-    scrollTopBtn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+        highlightSidebar();
+    }
+    window.addEventListener('scroll', () => {
+        if (scrollTimeout) cancelAnimationFrame(scrollTimeout);
+        scrollTimeout = requestAnimationFrame(handleScroll);
+    }, { passive: true });
+    if (scrollTopBtn) {
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
 
     // Modal fade-in effect
-    const modalBg = partyModal.querySelector('.bg-white, .dark\\:bg-gray-900');
-    partyModal.addEventListener('transitionstart', () => {
-        if (!partyModal.classList.contains('hidden')) {
-            modalBg && (modalBg.style.opacity = '1');
-        }
-    });
+    if (partyModal) {
+        const modalBg = partyModal.querySelector('.bg-white, .dark\\:bg-gray-900');
+        partyModal.addEventListener('transitionstart', () => {
+            if (!partyModal.classList.contains('hidden')) {
+                modalBg && (modalBg.style.opacity = '1');
+            }
+        });
+    }
 
     // Copy email to clipboard with notification
     const emailBtn = document.querySelector('a[aria-label="Email"]');
-    emailBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        const email = "himmel.hero@legend.com";
-        navigator.clipboard.writeText(email).then(() => {
-            showToast("Email copied to clipboard!");
+    if (emailBtn) {
+        emailBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const email = "himmel.hero@legend.com";
+            navigator.clipboard.writeText(email).then(() => {
+                showToast("Email copied to clipboard!");
+            });
         });
-    });
+    }
 
     // Simple toast notification
     function showToast(msg) {
         let toast = document.createElement('div');
         toast.innerText = msg;
+        toast.setAttribute('role', 'status');
+        toast.setAttribute('aria-live', 'polite');
         toast.className = "fixed bottom-24 right-8 z-50 bg-green-600 text-white px-4 py-2 rounded shadow-lg animate-fade";
         document.body.appendChild(toast);
         setTimeout(() => {
@@ -196,7 +216,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-    window.addEventListener('scroll', highlightSidebar);
     highlightSidebar();
 
     // Accent color switcher
@@ -215,7 +234,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const savedAccent = localStorage.getItem('accent');
     if (savedAccent) setAccent(savedAccent);
 
-    document.getElementById('printBtn').addEventListener('click', () => {
-        window.print();
-    });
+    const printBtn = document.getElementById('printBtn');
+    if (printBtn) {
+        printBtn.addEventListener('click', () => {
+            window.print();
+        });
+    }
 });
