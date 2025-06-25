@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Himmel's CV | Hero Party Leader</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=MedievalSharp&family=Noto+Serif+JP:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Noto Serif JP', serif;
+            background-color: #f5f0e6;
+            color: #333;
+        }
+        
+        .medieval {
+            font-family: 'MedievalSharp', cursive;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(230,240,255,0.9) 100%), 
+                        url('https://wallpaperaccess.com/full/11201678.jpg') no-repeat center center;
+            background-size: cover;
+        }
+        
+        .skill-bar {
+            height: 8px;
+            border-radius: 4px;
+            background: linear-gradient(90deg, #4a6fa5 0%, #6b8cce 100%);
+        }
+        
+        .scroll-effect {
+            transition: all 0.3s ease;
+        }
+        
+        .scroll-effect:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .hero-icon {
+            color: #4a6fa5;
+            text-shadow: 0 0 5px rgba(74, 111, 165, 0.3);
+        }
+        
+        .section-divider {
+            border-top: 2px dashed #4a6fa5;
+            opacity: 0.3;
+        }
+    </style>
+</head>
+<body class="bg-amber-50">
+    <div class="max-w-4xl mx-auto my-8 md:my-12 px-4">
+        <!-- Header Section -->
+        <header class="hero-bg rounded-2xl p-8 md:p-12 shadow-lg mb-8 scroll-effect">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-white shadow-lg mb-4 md:mb-0 md:mr-8">
+                    <img src="https://cdn.myanimelist.net/images/characters/9/523295.jpg" alt="Himmel Portrait" class="w-full h-full object-cover">
+                </div>
+                <div class="text-center md:text-left">
+                    <h1 class="medieval text-3xl md:text-4xl font-bold text-blue-900 mb-2">Himmel the Hero</h1>
+                    <p class="text-lg text-blue-700 mb-4">Former Leader of the Hero Party</p>
+                    <div class="flex justify-center md:justify-start space-x-4">
+                        <a href="#" class="text-blue-600 hover:text-blue-800 transition"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 transition"><i class="fas fa-envelope fa-lg"></i></a>
+                        <a href="#" class="text-blue-600 hover:text-blue-800 transition"><i class="fas fa-scroll fa-lg"></i></a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Left Column -->
+            <div class="md:col-span-1">
+                <!-- About Section -->
+                <div class="bg-white rounded-xl p-6 shadow-md mb-6 scroll-effect">
+                    <h2 class="medieval text-xl font-bold text-blue-900 mb-4 flex items-center">
+                        <i class="fas fa-info-circle hero-icon mr-2"></i> About
+                    </h2>
+                    <p class="text-gray-700 mb-4">
+                        The legendary hero who led the party that defeated the Demon King. Known for his noble spirit, leadership, and unwavering sense of justice.
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt hero-icon mr-3 w-5 text-center"></i>
+                            <span>Northern Continent</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-birthday-cake hero-icon mr-3 w-5 text-center"></i>
+                            <span>Age: Unknown (Appears 30s)</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-shield-alt hero-icon mr-3 w-5 text-center"></i>
+                            <span>Alignment: Lawful Good</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills Section -->
+                <div class="bg-white rounded-xl p-6 shadow-md mb-6 scroll-effect">
+                    <h2 class="medieval text-xl font-bold text-blue-900 mb-4 flex items-center">
+                        <i class="fas fa-swords hero-icon mr-2"></i> Skills
+                    </h2>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Swordsmanship</span>
+                                <span>98%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar rounded-full h-2" style="width: 98%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Leadership</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar rounded-full h-2" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Strategy</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar rounded-full h-2" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Charisma</span>
+                                <span>97%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar rounded-full h-2" style="width: 97%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Languages -->
+                <div class="bg-white rounded-xl p-6 shadow-md scroll-effect">
+                    <h2 class="medieval text-xl font-bold text-blue-900 mb-4 flex items-center">
+                        <i class="fas fa-language hero-icon mr-2"></i> Languages
+                    </h2>
+                    <div class="space-y-3">
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Common Tongue</span>
+                                <span>Native</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar rounded-full h-2" style="width: 100%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Ancient Elvish</span>
+                                <span>Intermediate</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar rounded-full h-2" style="width: 70%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span>Dwarven</span>
+                                <span>Basic</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="skill-bar rounded-full h-2" style="width: 40%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="md:col-span-2">
+                <!-- Experience -->
+                <div class="bg-white rounded-xl p-6 shadow-md mb-6 scroll-effect">
+                    <h2 class="medieval text-xl font-bold text-blue-900 mb-4 flex items-center">
+                        <i class="fas fa-trophy hero-icon mr-2"></i> Heroic Achievements
+                    </h2>
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="font-bold text-lg text-blue-800">Defeat of the Demon King</h3>
+                            <p class="text-sm text-gray-500 mb-2">80 Years Ago</p>
+                            <p class="text-gray-700">
+                                Led the Hero Party to victory against the Demon King, bringing peace to the continent. Coordinated the final assault that resulted in the Demon King's defeat.
+                            </p>
+                        </div>
+                        <div class="section-divider"></div>
+                        <div>
+                            <h3 class="font-bold text-lg text-blue-800">Purification of the Northern Wastes</h3>
+                            <p class="text-sm text-gray-500 mb-2">83 Years Ago</p>
+                            <p class="text-gray-700">
+                                Cleansed the corrupted lands of the Northern Wastes, removing the taint of dark magic and allowing nature to reclaim the area.
+                            </p>
+                        </div>
+                        <div class="section-divider"></div>
+                        <div>
+                            <h3 class="font-bold text-lg text-blue-800">Liberation of Aureole</h3>
+                            <p class="text-sm text-gray-500 mb-2">85 Years Ago</p>
+                            <p class="text-gray-700">
+                                Freed the city of Aureole from demonic occupation, saving thousands of civilians and restoring the city to its former glory.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education -->
+                <div class="bg-white rounded-xl p-6 shadow-md mb-6 scroll-effect">
+                    <h2 class="medieval text-xl font-bold text-blue-900 mb-4 flex items-center">
+                        <i class="fas fa-scroll hero-icon mr-2"></i> Training & Education
+                    </h2>
+                    <div class="space-y-6">
+                        <div>
+                            <h3 class="font-bold text-lg text-blue-800">Swordsmanship Mastery</h3>
+                            <p class="text-sm text-gray-500 mb-2">Under Master Eisen</p>
+                            <p class="text-gray-700">
+                                Trained under the legendary dwarven warrior Eisen, mastering both single-handed and two-handed sword techniques.
+                            </p>
+                        </div>
+                        <div class="section-divider"></div>
+                        <div>
+                            <h3 class="font-bold text-lg text-blue-800">Tactical Studies</h3>
+                            <p class="text-sm text-gray-500 mb-2">Royal Military Academy</p>
+                            <p class="text-gray-700">
+                                Studied military strategy and leadership at the prestigious Royal Military Academy, graduating with highest honors.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Party Members -->
+                <div class="bg-white rounded-xl p-6 shadow-md scroll-effect">
+                    <h2 class="medieval text-xl font-bold text-blue-900 mb-4 flex items-center">
+                        <i class="fas fa-users hero-icon mr-2"></i> Hero Party Members
+                    </h2>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-md mr-3">
+                                <img src="https://cdn.myanimelist.net/images/characters/7/525105.jpg" alt="Frieren" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-800">Frieren</h4>
+                                <p class="text-xs text-gray-600">Elven Mage</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-md mr-3">
+                                <img src="https://cdn.myanimelist.net/images/characters/13/523293.jpg" alt="Eisen" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-800">Eisen</h4>
+                                <p class="text-xs text-gray-600">Dwarven Warrior</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-md mr-3">
+                                <img src="https://cdn.myanimelist.net/images/characters/16/523294.jpg" alt="Heiter" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-800">Heiter</h4>
+                                <p class="text-xs text-gray-600">Human Priest</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-md mr-3">
+                                <img src="https://cdn.myanimelist.net/images/characters/9/523295.jpg" alt="Himmel" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-blue-800">Himmel</h4>
+                                <p class="text-xs text-gray-600">Human Hero</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="mt-12 text-center text-gray-600 text-sm">
+            <p>"Even after death, a hero's legend lives on."</p>
+            <p class="mt-2">© Hero Party Archives - All rights reserved</p>
+        </footer>
+    </div>
+
+    <script>
+        // Simple animation for scroll effects
+        document.addEventListener('DOMContentLoaded', function() {
+            const scrollElements = document.querySelectorAll('.scroll-effect');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            scrollElements.forEach(el => {
+                el.style.opacity = 0;
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
