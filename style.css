@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=MedievalSharp&family=Noto+Serif+JP:wght@400;700&display=swap');
+:root {
+    --accent: #4a6fa5;
+}
 body {
     font-family: 'Noto Serif JP', serif;
     background-color: #f5f0e6;
@@ -94,4 +97,36 @@ body.dark .skill-bar {
 .animate-fade {
     animation: fade 0.4s;
     transition: opacity 0.5s;
+}
+@keyframes bounceIn {
+    0% { opacity: 0; transform: translateY(40px) scale(0.95);}
+    60% { opacity: 1; transform: translateY(-10px) scale(1.05);}
+    100% { opacity: 1; transform: translateY(0) scale(1);}
+}
+.bounce-in {
+    animation: bounceIn 0.7s;
+}
+.accent {
+    color: var(--accent) !important;
+}
+.bg-accent {
+    background: var(--accent) !important;
+}
+.border-accent {
+    border-color: var(--accent) !important;
+}
+.ring-accent {
+    --tw-ring-color: var(--accent) !important;
+}
+body.accent-green {
+    --accent: #22c55e;
+}
+body.accent-purple {
+    --accent: #a21caf;
+}
+body.accent-red {
+    --accent: #ef4444;
+}
+body.accent-blue {
+    --accent: #2563eb;
 }

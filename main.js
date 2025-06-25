@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (entry.isIntersecting) {
                 entry.target.style.opacity = 1;
                 entry.target.style.transform = 'translateY(0)';
+                entry.target.classList.add('bounce-in');
             }
         });
     }, { threshold: 0.1 });
@@ -197,4 +198,24 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     window.addEventListener('scroll', highlightSidebar);
     highlightSidebar();
+
+    // Accent color switcher
+    function setAccent(accent) {
+        document.body.classList.remove('accent-blue', 'accent-green', 'accent-purple', 'accent-red');
+        document.body.classList.add('accent-' + accent);
+        localStorage.setItem('accent', accent);
+    }
+    ['Blue','Green','Purple','Red'].forEach(color => {
+        const btn = document.getElementById('accent'+color);
+        if (btn) {
+            btn.addEventListener('click', () => setAccent(color.toLowerCase()));
+        }
+    });
+    // Load accent from storage
+    const savedAccent = localStorage.getItem('accent');
+    if (savedAccent) setAccent(savedAccent);
+
+    document.getElementById('printBtn').addEventListener('click', () => {
+        window.print();
+    });
 });
