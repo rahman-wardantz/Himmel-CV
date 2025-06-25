@@ -7,48 +7,7 @@
     <meta name="description" content="CV of Himmel, legendary hero and leader of the Hero Party. Explore his achievements, skills, and party members.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=MedievalSharp&family=Noto+Serif+JP:wght@400;700&display=swap');
-        body {
-            font-family: 'Noto Serif JP', serif;
-            background-color: #f5f0e6;
-            color: #333;
-        }
-        .medieval {
-            font-family: 'MedievalSharp', cursive;
-        }
-        .hero-bg {
-            background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(230,240,255,0.9) 100%), 
-                        url('https://wallpaperaccess.com/full/11201678.jpg') no-repeat center center;
-            background-size: cover;
-        }
-        .skill-bar {
-            height: 8px;
-            border-radius: 4px;
-            background: linear-gradient(90deg, #4a6fa5 0%, #6b8cce 100%);
-            transition: width 1.2s cubic-bezier(0.4,0,0.2,1);
-        }
-        .scroll-effect {
-            transition: all 0.3s ease;
-        }
-        .scroll-effect:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.12);
-        }
-        .hero-icon {
-            color: #4a6fa5;
-            text-shadow: 0 0 5px rgba(74, 111, 165, 0.3);
-        }
-        .section-divider {
-            border-top: 2px dashed #4a6fa5;
-            opacity: 0.3;
-        }
-        .party-member:hover {
-            background: #f0f6ff;
-            transform: scale(1.03);
-            transition: background 0.3s, transform 0.3s;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-amber-50">
     <div class="max-w-4xl mx-auto my-8 md:my-12 px-4">
@@ -291,35 +250,6 @@
             <p class="mt-2">© Hero Party Archives - All rights reserved</p>
         </footer>
     </div>
-
-    <script>
-        // Simple animation for scroll effects
-        document.addEventListener('DOMContentLoaded', function() {
-            const scrollElements = document.querySelectorAll('.scroll-effect');
-            const skillBars = document.querySelectorAll('.skill-bar');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = 1;
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, { threshold: 0.1 });
-            scrollElements.forEach(el => {
-                el.style.opacity = 0;
-                el.style.transform = 'translateY(20px)';
-                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-                observer.observe(el);
-            });
-            // Animate skill bars
-            skillBars.forEach(bar => {
-                const width = bar.style.width;
-                bar.style.width = '0';
-                setTimeout(() => {
-                    bar.style.width = width;
-                }, 400);
-            });
-        });
-    </script>
+    <script src="main.js"></script>
 </body>
 </html>
