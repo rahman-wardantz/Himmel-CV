@@ -67,6 +67,14 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.classList.add('dark');
     }
 
+    // Auto dark mode by time (if user never set manually)
+    if (localStorage.getItem('darkMode') === null) {
+        const hour = new Date().getHours();
+        if (hour >= 18 || hour < 6) {
+            document.body.classList.add('dark');
+        }
+    }
+
     // Party member modal
     const partyMembers = document.querySelectorAll('.party-member');
     const partyModal = document.getElementById('partyModal');
@@ -120,6 +128,11 @@ document.addEventListener('DOMContentLoaded', function() {
     partyModal.addEventListener('click', (e) => {
         if (e.target === partyModal) partyModal.classList.add('hidden');
     });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === "Escape" && !partyModal.classList.contains('hidden')) {
+            partyModal.classList.add('hidden');
+        }
+    });
 
     // Scroll to Top Button
     const scrollTopBtn = document.getElementById('scrollTopBtn');
@@ -141,4 +154,47 @@ document.addEventListener('DOMContentLoaded', function() {
             modalBg && (modalBg.style.opacity = '1');
         }
     });
+
+    // Copy email to clipboard with notification
+    const emailBtn = document.querySelector('a[aria-label="Email"]');
+    emailBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const email = "himmel.hero@legend.com";
+        navigator.clipboard.writeText(email).then(() => {
+            showToast("Email copied to clipboard!");
+        });
+    });
+
+    // Simple toast notification
+    function showToast(msg) {
+        let toast = document.createElement('div');
+        toast.innerText = msg;
+        toast.className = "fixed bottom-24 right-8 z-50 bg-green-600 text-white px-4 py-2 rounded shadow-lg animate-fade";
+        document.body.appendChild(toast);
+        setTimeout(() => {
+            toast.classList.add('opacity-0');
+            setTimeout(() => toast.remove(), 500);
+        }, 1800);
+    }
+
+    // Highlight sidebar section on scroll
+    const sections = [
+        {id: 'about', selector: '.bg-white:has(.fa-info-circle)'},
+        {id: 'skills', selector: '.bg-white:has(.fa-swords)'},
+        {id: 'languages', selector: '.bg-white:has(.fa-language)'}
+    ];
+    function highlightSidebar() {
+        let scrollPos = window.scrollY + 120;
+        sections.forEach(sec => {
+            const el = document.querySelector(sec.selector);
+            if (!el) return;
+            if (el.offsetTop <= scrollPos && el.offsetTop + el.offsetHeight > scrollPos) {
+                el.classList.add('ring-2', 'ring-blue-400');
+            } else {
+                el.classList.remove('ring-2', 'ring-blue-400');
+            }
+        });
+    }
+    window.addEventListener('scroll', highlightSidebar);
+    highlightSidebar();
 });
