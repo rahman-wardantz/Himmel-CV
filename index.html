@@ -23,7 +23,8 @@
                     <div class="flex justify-center md:justify-start space-x-4">
                         <a href="#" aria-label="Twitter" class="text-blue-600 hover:text-blue-800 transition hover:scale-110"><i class="fab fa-twitter fa-lg"></i></a>
                         <a href="#" aria-label="Email" class="text-blue-600 hover:text-blue-800 transition hover:scale-110"><i class="fas fa-envelope fa-lg"></i></a>
-                        <a href="#" aria-label="Scroll" class="text-blue-600 hover:text-blue-800 transition hover:scale-110"><i class="fas fa-scroll fa-lg"></i></a>
+                        <a href="#achievements" aria-label="Scroll" class="text-blue-600 hover:text-blue-800 transition hover:scale-110 scroll-link"><i class="fas fa-scroll fa-lg"></i></a>
+                        <button id="darkModeToggle" aria-label="Toggle dark mode" class="ml-2 text-yellow-600 hover:text-yellow-800 transition hover:scale-110"><i class="fas fa-moon fa-lg"></i></button>
                     </div>
                 </div>
             </div>
@@ -142,7 +143,7 @@
             <!-- Right Column -->
             <div class="md:col-span-2">
                 <!-- Experience -->
-                <div class="bg-white rounded-xl p-6 shadow-md mb-6 scroll-effect">
+                <div class="bg-white rounded-xl p-6 shadow-md mb-6 scroll-effect" id="achievements">
                     <h2 class="medieval text-xl font-bold text-blue-900 mb-4 flex items-center">
                         <i class="fas fa-trophy hero-icon mr-2"></i> Heroic Achievements
                     </h2>
@@ -249,6 +250,12 @@
             <p>"Even after death, a hero's legend lives on."</p>
             <p class="mt-2">© Hero Party Archives - All rights reserved</p>
         </footer>
+    </div>
+    <div id="partyModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white dark:bg-gray-900 rounded-xl p-6 max-w-xs w-full relative shadow-lg">
+            <button id="closeModal" class="absolute top-2 right-2 text-gray-500 hover:text-red-500 text-xl">&times;</button>
+            <div id="modalContent"></div>
+        </div>
     </div>
     <script src="main.js"></script>
 </body>

@@ -38,3 +38,28 @@ body {
     transform: scale(1.03);
     transition: background 0.3s, transform 0.3s;
 }
+body.dark {
+    background-color: #181825;
+    color: #e0e0e0;
+}
+body.dark .bg-white {
+    background-color: #232337 !important;
+    color: #e0e0e0;
+}
+body.dark .text-blue-900,
+body.dark .text-blue-800,
+body.dark .text-blue-700 {
+    color: #a5b4fc !important;
+}
+body.dark .hero-bg {
+    background: linear-gradient(135deg, rgba(30,41,59,0.95) 0%, rgba(51,65,85,0.95) 100%);
+}
+body.dark .section-divider {
+    border-top: 2px dashed #818cf8;
+}
+body.dark .party-member:hover {
+    background: #232337;
+}
+body.dark .skill-bar {
+    background: linear-gradient(90deg, #818cf8 0%, #a5b4fc 100%);
+}
