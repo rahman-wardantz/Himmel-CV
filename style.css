@@ -51,6 +51,15 @@ body.dark .text-blue-800,
 body.dark .text-blue-700 {
     color: #a5b4fc !important;
 }
+body.dark .text-gray-700,
+body.dark .text-gray-600,
+body.dark .text-gray-500,
+body.dark .text-xs {
+    color: #d1d5db !important; /* Tailwind gray-300 */
+}
+body.dark .text-center {
+    color: #e5e7eb !important; /* Tailwind gray-200 */
+}
 body.dark .hero-bg {
     background: linear-gradient(135deg, rgba(30,41,59,0.95) 0%, rgba(51,65,85,0.95) 100%);
 }
