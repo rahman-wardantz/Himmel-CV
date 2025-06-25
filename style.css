@@ -35,8 +35,10 @@ body {
 }
 .party-member:hover {
     background: #f0f6ff;
-    transform: scale(1.03);
-    transition: background 0.3s, transform 0.3s;
+    transform: scale(1.05);
+    border: 2px solid #4a6fa5;
+    box-shadow: 0 6px 24px rgba(74,111,165,0.15);
+    transition: background 0.3s, transform 0.3s, border 0.3s, box-shadow 0.3s;
 }
 body.dark {
     background-color: #181825;
@@ -68,7 +70,20 @@ body.dark .section-divider {
 }
 body.dark .party-member:hover {
     background: #232337;
+    border: 2px solid #818cf8;
+    box-shadow: 0 6px 24px rgba(129,140,248,0.15);
 }
 body.dark .skill-bar {
     background: linear-gradient(90deg, #818cf8 0%, #a5b4fc 100%);
+}
+#partyModal .bg-white,
+#partyModal .dark\:bg-gray-900 {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.3s, transform 0.3s;
+}
+#partyModal:not(.hidden) .bg-white,
+#partyModal:not(.hidden) .dark\:bg-gray-900 {
+    opacity: 1;
+    transform: scale(1);
 }

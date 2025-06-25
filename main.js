@@ -120,4 +120,25 @@ document.addEventListener('DOMContentLoaded', function() {
     partyModal.addEventListener('click', (e) => {
         if (e.target === partyModal) partyModal.classList.add('hidden');
     });
+
+    // Scroll to Top Button
+    const scrollTopBtn = document.getElementById('scrollTopBtn');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            scrollTopBtn.classList.remove('hidden');
+        } else {
+            scrollTopBtn.classList.add('hidden');
+        }
+    });
+    scrollTopBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Modal fade-in effect
+    const modalBg = partyModal.querySelector('.bg-white, .dark\\:bg-gray-900');
+    partyModal.addEventListener('transitionstart', () => {
+        if (!partyModal.classList.contains('hidden')) {
+            modalBg && (modalBg.style.opacity = '1');
+        }
+    });
 });
